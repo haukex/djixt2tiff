@@ -1,0 +1,8 @@
+
+# You can install/upgrade the Python packages from this file via:
+# pip3 install --upgrade --upgrade-strategy=eager -r requirements.txt
+
+tifffile
+numpy
+matplotlib
+regex

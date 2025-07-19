@@ -101,10 +101,10 @@ def pageprops(*, idx :int, page :tifffile.TiffPage) -> dict[str, Any]:
     for k, v in _page_tagconv_it(page):
         if k in atts: raise KeyError(f"Key {k!r} already exists with value {atts[k]!r}, can't set it to {v!r}.")
         atts[k] = v
-    # fixup page number
-    if len(atts['PageNumber'])!=2 or atts['PageNumber'][0]!=idx or atts['PageNumber'][1]!=0:
-        raise RuntimeError(f"bad PageNumber, expected {idx}, got {atts['PageNumber']!r}")
-    atts['PageNumber'] = atts['PageNumber'][0]
+    # fixup page number - no, don't place this restriction on the page number
+    #if len(atts['PageNumber'])!=2 or atts['PageNumber'][0]!=idx or atts['PageNumber'][1]!=0:
+    #    raise RuntimeError(f"bad PageNumber, expected {(idx,0)}, got {atts['PageNumber']!r}")
+    #atts['PageNumber'] = atts['PageNumber'][0]
     # fixup date/time
     if 'DateTimeOriginal' in atts:
         dt = datetime.datetime.strptime(atts['DateTimeOriginal'], '%Y:%m:%d %H:%M:%S')

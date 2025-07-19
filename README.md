@@ -7,7 +7,8 @@ infrared camera.
 Dependencies
 ------------
 
-Python 3.10 (may work on older versions, but this is untested)
+Python 3.10 (may work on older versions, but this is untested),
+most recently tested on Python 3.12
 
 See `requirements.txt` for additional requirements and how to install them.
 

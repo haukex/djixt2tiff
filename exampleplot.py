@@ -62,7 +62,7 @@ def display_image(*, file :str|os.PathLike, index :int, width_in :float):
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.colors.Colormap.html
     # https://matplotlib.org/stable/tutorials/colors/colormaps.html
     # this colormap doesn't contain green, but we also don't expect any "bad" pixels
-    cmap = mp.cm.get_cmap('plasma').with_extremes(under="white", over="black", bad="green")
+    cmap = mp.colormaps['plasma'].with_extremes(under="white", over="black", bad="green")
 
     # calculate figure height from width based on aspect ratio
     height_in = (width_in / props['ImageWidth']) * props['ImageLength']
